@@ -2,68 +2,86 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>создать пользователя</title>
-  </head>
+    <title>Add new user</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 <body>
-<h1>новый пользователь</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Create new user</h1>
+            <div class="card-body">
                 <form th:action="@{/admin}" th:object="${user}" method="post">
-
-                        <label>Имя </label>
+                    <div class="form-group">
+                        <label>User's name </label>
                         <input
-                                type="text"
-                                name="name"
-
-                                value=""
-                                placeholder="Имя"/>
-
-                        <label>Фамилия</label>
+                                th:type="text"
+                                th:name="name"
+                                class="form-control"
+                                th:field="*{name}"
+                                placeholder="Enter user's name"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's surname</label>
                         <input
-                                type="text"
-                                name="surname"
-                                value=""
-                                placeholder="Фамилия"/>
-                        <label>адрес</label>
+                                th:type="text"
+                                th:name="surname"
+                                class="form-control"
+                                th:field="*{surname}"
+                                placeholder="Enter user's surname"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's e-mail</label>
                         <input
-                                type="text"
-                                name="address"
-
-                                value=""
-                                placeholder="адрес"/>
-                        <label>номер телефона</label>
+                                th:type="text"
+                                th:name="username"
+                                class="form-control"
+                                th:field="*{username}"
+                                placeholder="Enter user's e-mail"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's age</label>
                         <input
                                 type="number"
-                                name="fn"
-
-                                value=""
-                                placeholder="телефон"/>
-
-                        <label>email</label>
+                                th:name="age"
+                                class="form-control"
+                                th:field="*{age}"
+                                placeholder="Enter user's age"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's password</label>
                         <input
-                                type="text"
-                                name="username"
-                                value=""
-                                placeholder="email"/>
-
-                        <label>password</label>
+                                th:type="password"
+                                th:name="password"
+                                class="form-control"
+                                th:field="*{password}"
+                                placeholder="Enter user's password"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>User's role</label>
                         <input
-                                type="password"
-                                name="password"
-                                value=""
-                                placeholder="password"/>
-
-                        <label>role</label>
-                        <input
-                                type="text"
-                                name="roles"
-                                value=""
-                                placeholder="role"/>
-
+                                th:type="text"
+                                th:name="roles"
+                                class="form-control"
+                                th:field="*{roles}"
+                                placeholder="Enter user's role"
+                        />
+                    </div>
                     <div class="box-footer">
-                        <button type="submit">
+                        <button type="submit" class="btn btn-primary">
                             Submit
                         </button>
-
+                    </div>
                 </form>
-
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
