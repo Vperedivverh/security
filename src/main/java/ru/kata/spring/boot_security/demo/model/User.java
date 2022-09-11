@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
@@ -33,12 +34,11 @@ public class User implements UserDetails {
     private String username;
     @Column(name = "password")
     private String password;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    @Fetch(FetchMode.JOIN)
-    private Collection<Role> roles;
+    private Set<Role> roles;
 
     @Override
     public boolean isAccountNonExpired() {

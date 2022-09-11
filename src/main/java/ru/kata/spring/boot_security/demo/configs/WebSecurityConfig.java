@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import ru.kata.spring.boot_security.demo.service.UserServiceImpl;
 
+import javax.transaction.Transactional;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
