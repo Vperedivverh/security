@@ -80,6 +80,14 @@
                                                        disabled/>
                                             </div>
                                             <div class="form-group m-3">
+                                                <label for="addressDelete" class="col-form-label">Address</label>
+                                                <input type="text" class="form-control"
+                                                       id="addressDelete"
+                                                       name="address"
+                                                       th:value="${user.getAddress()}"
+                                                       disabled/>
+                                            </div>
+                                            <div class="form-group m-3">
                                                 <label for="usernameDelete"
                                                        class="col-form-label">E-Mail</label>
                                                 <input type="text" class="form-control"
@@ -89,12 +97,12 @@
                                                        disabled/>
                                             </div>
                                             <div class="form-group m-3">
-                                                <label for="ageDelete"
-                                                       class="col-form-label">Age</label>
+                                                <label for="fnDelete"
+                                                       class="col-form-label">Phone</label>
                                                 <input type="number" class="form-control"
-                                                       id="ageDelete"
-                                                       name="age"
-                                                       th:value="${user.getAge()}"
+                                                       id="fnDelete"
+                                                       name="fn"
+                                                       th:value="${user.getFn()}"
                                                        disabled/>
                                             </div>
                                             <div class="form-group m-3" readonly="readonly">
@@ -172,6 +180,13 @@
                                                        th:value="${user.surname}"/>
                                             </div>
                                             <div class="form-group m-3">
+                                                <label for="addressEdit">Address</label>
+                                                <input type="text" class="form-control"
+                                                       id="addressEdit"
+                                                       name="address"
+                                                       th:value="${user.address}"/>
+                                            </div>
+                                            <div class="form-group m-3">
                                                 <label for="usernameEdit"
                                                        class="col-form-label">E-Mail</label>
                                                 <input type="text" class="form-control"
@@ -181,18 +196,18 @@
                                             </div>
 
                                             <div class="form-group m-3">
-                                                <label for="ageEdit"
-                                                       class="col-form-label">Age</label>
+                                                <label for="fnEdit"
+                                                       class="col-form-label">Phone</label>
                                                 <input type="number" class="form-control"
-                                                       id="ageEdit"
-                                                       name="age"
-                                                       th:value="${user.age}"/>
+                                                       id="fnEdit"
+                                                       name="fn"
+                                                       th:value="${user.fn}"/>
                                             </div>
 
                                             <div class="form-group m-3">
                                                 <label for="passwordEdit"
                                                        class="col-form-label">Password</label>
-                                                <input type="password" class="form-control"
+                                                <input type="text" class="form-control"
                                                        id="passwordEdit"
                                                        name="password"
                                                        th:value="${user.password}"/>
@@ -207,10 +222,10 @@
                                                 >
                                                     <option selected="true"
                                                             th:type="text">
-                                                        USER
+                                                        ROLE_USER
                                                     </option>
                                                     <option th:type="text">
-                                                        ADMIN
+                                                        ROLE_ADMIN
                                                     </option>
                                                 </select>
                                             </div>

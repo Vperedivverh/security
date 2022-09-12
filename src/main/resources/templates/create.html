@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+        <div class="col-lg-7 col-md-7 col-sm-7 container justify-content-center card">
             <h1 class="text-center">Create new user</h1>
             <div class="card-body">
                 <form th:action="@{/admin}" th:object="${user}" method="post">
@@ -34,6 +34,16 @@
                         />
                     </div>
                     <div class="form-group">
+                        <label>User's address</label>
+                        <input
+                                th:type="text"
+                                th:name="address"
+                                class="form-control"
+                                th:field="*{address}"
+                                placeholder="Enter user's address"
+                        />
+                    </div>
+                    <div class="form-group">
                         <label>User's e-mail</label>
                         <input
                                 th:type="text"
@@ -44,13 +54,13 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label>User's age</label>
+                        <label>User's phone</label>
                         <input
                                 type="number"
-                                th:name="age"
+                                th:name="fn"
                                 class="form-control"
-                                th:field="*{age}"
-                                placeholder="Enter user's age"
+                                th:field="*{fn}"
+                                placeholder="Enter user's phone number"
                         />
                     </div>
                     <div class="form-group">

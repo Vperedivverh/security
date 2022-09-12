@@ -32,16 +32,7 @@ public class AdminController {
 
     @PostMapping("/admin")
     public String saveUser(@ModelAttribute("user") User user) {
-        User user1 = new User();
-        user1.setPassword(passwordEncoder.encode(user.getPassword()));
-        user1.setName(user.getName());
-        user1.setSurname(user.getSurname());
-        user1.setAddress(user.getAddress());
-        user1.setRoles(user.getRoles());
-        user1.setFn(user.getFn());
-        user1.setId(user.getId());
-        user1.setUsername(user.getUsername());
-        userService.saveUser(user1);
+        userService.saveUser(user);
         return "redirect:/admin";
     }
 
@@ -60,16 +51,8 @@ public class AdminController {
 
     @PostMapping("/admin/users/{id}")
     public String updateUser(@PathVariable int id, @ModelAttribute("user") User user) {
-        User user1 = new User();
-        user1.setPassword(passwordEncoder.encode(user.getPassword()));
-        user1.setName(user.getName());
-        user1.setSurname(user.getSurname());
-        user1.setAddress(user.getAddress());
-        user1.setRoles(user.getRoles());
-        user1.setFn(user.getFn());
-        user1.setId(user.getId());
-        user1.setUsername(user.getUsername());
-        userService.updateUser(user1);
+
+        userService.updateUser(user);
         return "redirect:/admin";
     }
 
